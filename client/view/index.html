@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Kriker</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1>Kriker - pusti svoj krik! 😱</h1>
+        <h3><i>Kriker - let your screech out!</i></h3>
+    </header>
+    <div class="main">
+        <form class="krik-form">
+            <label for="name">Ime:</label>
+            <input type="text" id="name" name="name" placeholder ="Tvoje ime..." required>
+            <label for="">Krik:</label>
+            <textarea name="content" id="content" cols="30" rows="10" maxlength="140" placeholder="Pusti svoj krik..." required></textarea>
+            <button id="btn">Pusti krik 😱</button>
+        </form>
+        <div class="krik-container">
+
+            <div class="krik">
+                <h3>TestName</h3>
+                <div class="krik-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente consectetur nobis
+                        numquam incidunt non fugiat corrupti ratione cum ea.</p>
+                        <span>04/01/2023</span>
+                </div>
+                
+            </div>
+
+            <div class="krik">
+                <h3>TestName</h3>
+                <div class="krik-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente consectetur nobis
+                        numquam incidunt non fugiat corrupti ratione cum ea.</p>
+                </div>
+                <span>04/01/2023</span>
+            </div>
+
+            <div class="krik">
+                <h3>TestName</h3>
+                <div class="krik-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente consectetur nobis
+                        numquam incidunt non fugiat corrupti ratione cum ea.</p>
+                </div>
+                <span>04/01/2023</span>
+            </div>
+
+        </div>
+    </div>
 
     <script src="../public/index.js"></script>
 </body>
+
 </html>

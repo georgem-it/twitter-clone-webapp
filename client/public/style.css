@@ -1,3 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: red;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    background-color: #ffe79a; 
+}
+
+button {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+header {
+   width: min(90%, 860px);
+   margin: 0 auto;
+   padding-top: 20px;
+   text-align: center;
+}
+
+.main {
+    width: min(90%, 860px);
+    margin: 5em auto;
+}
+
+.krik-form {
+    width: min(100%, 600px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: inherit;
+}
+
+#name {
+    width: 10rem;
+    height: 2rem;
+    font-size: 1rem;
+    padding: 5px;
+    font-family: inherit;
+    background-color: #fdffc6;
+    border: 1px solid;
+    border-radius: 0.3rem;
+}
+
+#content {
+    font-size: 1rem;
+    resize: vertical;
+    padding: 10px;
+    font-family: inherit;
+    background-color: #fdffc6;
+    border: 1px solid;
+    border-radius: 0.3rem;
+}
+
+#btn {
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    background-color: #ef5a5a;
+    min-width: 180px;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover {
+    background-color: #d75151;
+}
+
+.krik-container{
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.krik {
+    padding: 10px;
+}
+
+.krik h3 {
+    margin-bottom: 5px;
+}
+
+.krik-content {
+    background-color: #fdffc6;
+    border-radius: 0.3rem;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    
 }
