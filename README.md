@@ -2,7 +2,7 @@
 
 Twitter clone web app, final project for QStation course/bootcamp.
 
-My idea is to create a simpler version of Twitter, ie. a Twitter clone, called Kriker (so you can send a "Krik", like you can send a Tweet). Krik = "screech" in my language, so the web app is a bit humorous - you screech into the abyss.
+My idea is to create a simpler version of Twitter, ie. a Twitter clone, called Kriker (so you can send a "Krik", like you can send a Tweet). Krik = "shriek" in my language, so the web app is a bit humorous - you shriek into the abyss.
 
 At the time of writing this, I created some basic frontend. The next step is to create the backend (my own API) and connect it to the frontend, using Node, Express and MongoDB. The biggest challenge will be working with databases, as I currently have very little experience with them. I have some basic knowledge in these areas though, and our tutor showed us some quick basics as well (so I have some files from the bootcamp), but I'll use the mighty Internet as my universal helper.
 
