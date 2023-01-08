@@ -67,9 +67,10 @@ app.get("/krik", async (req,res) => {
 
     try{
     if (name) {
-        kriks = await Krik.find({name:name}).exec()
+        //.sort with createdAt -1 will place the latest data at the "top"
+        kriks = await Krik.find({name:name}).sort({createdAt: -1}).exec()
     } else {
-        kriks = await Krik.find({}).exec()
+        kriks = await Krik.find({}).sort({createdAt: -1}).exec()
     }
 
 res.json({kriks, count: kriks.length})
