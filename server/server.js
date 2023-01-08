@@ -9,10 +9,73 @@ app = express()
 app.use(cors())
 app.use(express.json())
 
-const PORT = process.env.PORT || 3003
+// const PORT = process.env.PORT || 3005
+const PORT = 3005
+// database connection
+mongoose.connect(process.env.MONGO_URI,
+    () => console.log("db connected successfully"))
 
-app.get("/", (req,res) => {
+
+// database schema
+const KrikSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    content: {
+        type: String,
+        required: true
+    }
+}, { timestamps: true })
+
+let Krik = mongoose.model("Krik", KrikSchema)
+
+function isValidKrik(body) {
+    //there is a name in the body and it is not empty
+    return (body.name && body.name.trim() != "" && body.content && body.content.trim() != "")
+}
+
+app.get("/", (req, res) => {
     res.json("Hello I am working")
 })
 
-app.listen(PORT, () => console.log("Listening on port 3003"))
+app.post("/krik", async (req, res) => {
+    if (isValidKrik(req.body)) {
+        let name = req.body.name.toString()
+        let content = req.body.content.toString()
+
+
+        try {
+            let krik = await Krik.create({
+                name,
+                content
+            })
+            res.json(krik)
+        } catch (err) {
+            res.json({ err })
+        }
+
+    } else {
+        res.status(400)
+        res.json({ message: "Invalid request" })
+    }
+})
+
+app.get("/krik", async (req,res) => {
+    let name = req.query.name
+    let kriks;
+
+    try{
+    if (name) {
+        kriks = await Krik.find({name:name}).exec()
+    } else {
+        kriks = await Krik.find({}).exec()
+    }
+
+res.json({kriks, count: kriks.length})
+} catch(err) {
+    res.json({err})
+}
+})
+
+app.listen(PORT, () => console.log("Listening on port 3005"))
