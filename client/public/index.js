@@ -18,7 +18,8 @@ async function getAllKriks() {
 // GET by name
 
 async function getKrikByName(name) {
-    
+    let response = await fetch(API_URL + `?name=${name}`)
+    let kriks = await response.json()
 }
 
 getAllKriks()
