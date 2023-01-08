@@ -1,13 +1,32 @@
 const API_URL = "http://localhost:3005/krik"
 
 const krikContainer = document.querySelector(".krik-container")
+const krikForm = document.querySelector(".krik-form")
 
+krikForm.addEventListener("submit", async (e) => {
+    e.preventDefault()
 
-// POST create krik
+    let formData = new FormData(krikForm)
+    let payload = {
+        name: formData.get("name"),
+        content: formData.get("content")
+    }
+    let response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    })
 
-async function createKrik(body) {
+    if (response.status == 200) {
+        krikForm.reset()
+        getAllKriks()
+    } else {
+        return
+    }
 
-}
+})
 
 // GET all kriks
 
