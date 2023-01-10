@@ -102,3 +102,15 @@ header {
     font-size: 0.8rem;
     opacity: 80%;
 }
+
+.max-char {
+    color: red;
+    font-weight: bolder;
+    margin: 0px auto;
+
+}
+
+.char-validate {
+    display: flex;
+    gap: 20px;
+}
