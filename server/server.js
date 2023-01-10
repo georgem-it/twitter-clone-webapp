@@ -34,15 +34,14 @@ function isValidKrik(body) {
     return (body.name && body.name.trim() != "" && body.content && body.content.trim() != "")
 }
 
-app.get("/", (req, res) => {
-    res.json("Hello I am working")
-})
+// app.get("/", (req, res) => {
+//     res.json("Hello I am working")
+// })
 
 app.post("/krik", async (req, res) => {
     if (isValidKrik(req.body)) {
         let name = req.body.name.toString()
         let content = req.body.content.toString()
-
 
         try {
             let krik = await Krik.create({
@@ -60,22 +59,22 @@ app.post("/krik", async (req, res) => {
     }
 })
 
-app.get("/krik", async (req,res) => {
+app.get("/krik", async (req, res) => {
     let name = req.query.name
     let kriks;
 
-    try{
-    if (name) {
-        //.sort with createdAt -1 will place the latest data at the "top"
-        kriks = await Krik.find({name:name}).sort({createdAt: -1})
-    } else {
-        kriks = await Krik.find({}).sort({createdAt: -1})
-    }
+    try {
+        if (name) {
+            //.sort with createdAt -1 will place the latest data at the "top"
+            kriks = await Krik.find({ name: name }).sort({ createdAt: -1 })
+        } else {
+            kriks = await Krik.find({}).sort({ createdAt: -1 })
+        }
 
-res.json({kriks, count: kriks.length})
-} catch(err) {
-    res.json({err})
-}
+        res.json({ kriks, count: kriks.length })
+    } catch (err) {
+        res.json({ err })
+    }
 })
 
 app.listen(PORT, () => console.log("Listening on port 3005"))
