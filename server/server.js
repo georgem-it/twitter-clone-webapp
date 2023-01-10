@@ -9,8 +9,7 @@ app = express()
 app.use(cors())
 app.use(express.json())
 
-// const PORT = process.env.PORT || 3005
-const PORT = 3005
+const PORT = process.env.PORT || 3005
 // database connection
 mongoose.connect(process.env.MONGO_URI,
     () => console.log("db connected successfully"))
@@ -68,9 +67,9 @@ app.get("/krik", async (req,res) => {
     try{
     if (name) {
         //.sort with createdAt -1 will place the latest data at the "top"
-        kriks = await Krik.find({name:name}).sort({createdAt: -1}).exec()
+        kriks = await Krik.find({name:name}).sort({createdAt: -1})
     } else {
-        kriks = await Krik.find({}).sort({createdAt: -1}).exec()
+        kriks = await Krik.find({}).sort({createdAt: -1})
     }
 
 res.json({kriks, count: kriks.length})
