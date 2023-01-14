@@ -11,8 +11,8 @@ At the time of writing this, I created some basic frontend. The next step is to 
 1. Download the whole project as zip
 2. Unzip the folder
 3. Open folder in VSCode
-4. Open terminal, cd to server folder
-5. Type npm run start dev or nodemon server.js
+4. Open terminal, cd to server folder with ``` cd server ```
+5. Type ``` npm run start dev ``` or ``` nodemon server.js ```
 6. Open index.html, located in client/view folder, in your browser of choice
 
 Demo link, showing:
@@ -38,8 +38,8 @@ U vrijeme pisanja ovog teksta, napravio sam osnovni frontend. Sljedeći korak je
 1. Download cijeli projekat kao zip fajl
 2. Unzipovati folder
 3. Otvoriti ga u VSCode
-4. Otvoriti terminal, cd u folder server
-5. Ukucati npm run start dev ili nodemon server.js
+4. Otvoriti terminal, cd u folder server sa ``` cd server ```
+5. Ukucati ``` npm run start dev ``` ili ``` nodemon server.js ```
 6. Otvoriti index.html, koji se nalazi u folderu client/view
 
 Demo link, koji pokazuje:
