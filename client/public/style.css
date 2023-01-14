@@ -56,7 +56,7 @@ header {
     border-radius: 0.3rem;
 }
 
-#btn {
+.btn {
     border: 1px solid black;
     border-radius: 0.3rem;
     background-color: #ef5a5a;
@@ -70,7 +70,7 @@ header {
     transition: background-color 0.3s ease;
 }
 
-#btn:hover {
+.btn:hover {
     background-color: #d75151;
 }
 
@@ -103,3 +103,10 @@ header {
     opacity: 80%;
 }
 
+.krik-name {
+    cursor: pointer;
+}
+
+.dn {
+    display: none;
+}
