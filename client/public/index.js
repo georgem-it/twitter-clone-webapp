@@ -56,6 +56,7 @@ function displayKriks(data) {
             let krik = document.createElement("div")
             krik.classList.add("krik")
             let name = document.createElement("h3")
+            name.classList.add("krik-name")
             name.textContent = record.name
             let krikContent = document.createElement("div")
             krikContent.classList.add("krik-content")
@@ -77,5 +78,22 @@ function displayKriks(data) {
     }
 
 }
+
+
+const showAll = document.querySelector(".show-all")
+const showAllBtn = document.querySelector(".show-all-btn")
+
+document.addEventListener("click", (e)=> {
+    if((e.target.matches("h3") && e.target.getAttribute("class") == "krik-name")) {
+        let name = e.target.textContent
+        getKrikByName(name)
+        showAll.classList.remove("dn")
+    }
+})
+
+showAllBtn.addEventListener("click", ()=> {
+    getAllKriks()
+    showAll.classList.add("dn")
+})
 
 getAllKriks()
